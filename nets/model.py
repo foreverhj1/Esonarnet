@@ -9,9 +9,9 @@ from skimage.feature import hog
 from skimage import feature as ft
 import torch.nn.functional as F
 
-from .nn import (ConvLayer, DSConv, FusedMBConv, IdentityLayer, SMBConv,
-                 OpSequential, ResBlock, ResidualBlock, EfficientViTBlock)
-from nets.utils import Upconv, LHDGM_block
+from .nn import (ConvLayer, DSConv, IdentityLayer, SMBConv, OpSequential,
+                 ResidualBlock, EfficientViTBlock)
+from nets.utils import Upconv, LHDGM_block, LGFI_block, GLAU_block
 
 
 class EsonarnetBackbone(nn.Module):
@@ -51,7 +51,8 @@ class EsonarnetBackbone(nn.Module):
         in_channels = width_list[0]
         self.input_stem = OpSequential(self.input_stem)
         self.width_list.append(in_channels)
-
+        self.lgfi = LGFI_block()
+        self.glau = GLAU_block()
         # stages
         self.stages = []
         for w, d in zip(width_list[1:3], depth_list[1:3]):
@@ -72,7 +73,8 @@ class EsonarnetBackbone(nn.Module):
                 in_channels = w
             self.stages.append(OpSequential(stage))
             self.width_list.append(in_channels)
-
+        self.stages.append(OpSequential(self.lgfi))
+        self.width_list.append(in_channels)
         for w, d in zip(width_list[3:], depth_list[3:]):
             stage = []
             block = self.build_local_block(
@@ -98,6 +100,8 @@ class EsonarnetBackbone(nn.Module):
                     ))
             self.stages.append(OpSequential(stage))
             self.width_list.append(in_channels)
+        self.stages.append(OpSequential(self.glau))
+        self.width_list.append(in_channels)
         self.stages = nn.ModuleList(self.stages)
 
     @staticmethod
