@@ -1,3 +1,12 @@
+<!--
+ * @Author: orchxuhu
+ * @Date: 2024-06-10 18:34:52
+ * @LastEditors: orchxuhu
+ * @LastEditTime: 2024-06-23 23:42:41
+ * @Description: 
+ * 
+ * Copyright ORCA 2024, All Rights Reserved. 
+-->
 # Efficient SonarNet
 This official code is publicly available for forward-looking sonar iamge segmentation task, along with our paper work "Efficient SonarNet: Lightweight CNN Grafted
 Vision Transformer Embedding Network for Forward-Looking Sonar Image Segmentation".
@@ -53,11 +62,8 @@ make sure you have previously finished train.py
 </p>
 
 ## Acknowledgement
-If you have any question, you could also contact hj@mail.nwpu.edu.cn. We use some codes from [SonarNet](https://ieeexplore.ieee.org/abstract/document/10443635/)[1], [EfficientVIT](https://openaccess.thecvf.com/content/ICCV2023/html/Cai_EfficientViT_Lightweight_Multi-Scale_Attention_for_High-Resolution_Dense_Prediction_ICCV_2023_paper.html)[2], [Deeplabv3+](https://github.com/bubbliiiing/deeplabv3-plus-pytorch)[3]. A big thanks to their great work!
+If you have any question, you could also contact hj@mail.nwpu.edu.cn. We use some codes from [SonarNet](https://ieeexplore.ieee.org/abstract/document/10443635/)[1], [Deeplabv3+](https://github.com/bubbliiiing/deeplabv3-plus-pytorch)[2]. A big thanks to their great work!
 
 [1]"SonarNet: Hybrid CNN-Transformer-HOG Framework and Multifeature Fusion Mechanism for Forward-Looking Sonar Image Segmentation." IEEE Transactions on Geoscience and Remote Sensing 62 (2024): 1-17.
 
-
-[2] "Efficientvit: Lightweight multi-scale attention for high-resolution dense prediction." Proceedings of the IEEE/CVF International Conference on Computer Vision. 2023.
-
-[3] "Encoder-decoder with atrous separable convolution for semantic image segmentation " Proceedings of the European conference on computer vision (ECCV). 2018: 801-818.
+[2] "Encoder-decoder with atrous separable convolution for semantic image segmentation " Proceedings of the European conference on computer vision (ECCV). 2018: 801-818.
