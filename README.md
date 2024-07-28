@@ -2,14 +2,15 @@
  * @Author: orchxuhu
  * @Date: 2024-06-10 18:34:52
  * @LastEditors: orchxuhu
- * @LastEditTime: 2024-07-28 15:25:56
+ * @LastEditTime: 2024-07-28 15:29:44
  * @Description: 
  * 
  * Copyright ORCA 2024, All Rights Reserved. 
 -->
 # Efficient SonarNet
 Efficient forward-looking sonar iamge segmentation, along with our paper work "Efficient SonarNet: Lightweight CNN Grafted
-Vision Transformer Embedding Network for Forward-Looking Sonar Image Segmentation" is accept
+Vision Transformer Embedding Network for Forward-Looking Sonar Image Segmentation" in IEEE Transactions on Geoscience and Remote Sensing Journal.
+
 <p align="center">
 <img src="./fig/1.png" width="500" height="300"/>
 </figure> 
@@ -51,6 +52,7 @@ or Underwater acoustic target detection dataset [link](https://www.nature.com/ar
 <img src="./fig/3.png" width="600"/>
 </figure> 
 </p>
+
 
 ## Acknowledgement
 If you have any question, you could also contact hj@mail.nwpu.edu.cn. We use some codes from [SonarNet](https://ieeexplore.ieee.org/abstract/document/10443635/)[1], [Deeplabv3+](https://github.com/bubbliiiing/deeplabv3-plus-pytorch)[2]. A big thanks to their great work!
